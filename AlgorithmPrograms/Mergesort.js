@@ -1,4 +1,8 @@
 var D=require('../utility/utility');
+/**
+ * import the Utility class to use the functionalities.
+ */
+
 var read=require('readline-sync');
 var num=read.questionInt("enter the size of array : ")
 var arr=[];
@@ -7,5 +11,6 @@ while(num!=arr.length)
     var number=read.questionInt("enter the array elements : ")
     arr.push(number)
 }
-//var res=D.fileCall();
-D.insertionSort(arr)
+var l=0;
+var h=arr.length;
+D.mergeSort(arr,l,h)

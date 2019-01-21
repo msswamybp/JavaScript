@@ -1,4 +1,4 @@
-
+var T=require('util')
 class Node {
 
     constructor(data) {
@@ -176,5 +176,45 @@ class LinkedList {
 }
 
 //module.exports={LinkedList}
-module.exports = { LinkedList, Stack }
+module.exports = { LinkedList, Stack ,
+    print2DArray2(rows, col,arr1) {
+        var arr = [];
+        
+        for (let i = 0; i < rows; i++) {
+            arr.push([]);
+            for (let j = 0; j < col; j++) {
+                
+
+                arr[i][j] = arr1[j]
+                j++
+            }
+           // i=i+30
+        }
+        var arr1 = this.mark12(arr,rows,col);
+
+
+    },
+    mark12(arr,rows,col) {
+
+        for (let i = 0; i < rows; i++) {
+            var p = []
+            for (let j = 0; j < col; j++) {
+                p[j] = arr[i][j]
+            }
+          // console.log(p)
+            //T.print(p)
+        }
+        return p
+
+    },
+    
+
+
+
+
+
+
+
+
+}
 

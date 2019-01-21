@@ -33,9 +33,11 @@ module.exports = {
     findLeapyear(year) {
         if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
             console.log("is leap year")
+            return true
         }
         else
             console.log("is not a leap year")
+            return false
     },
 
 
@@ -344,6 +346,21 @@ module.exports = {
         console.log("prime number in given range are :")
         console.log(arr)
     },
+    isPrimeNumber(num){
+        var c=0
+        for (let j = num; j >= 1; j--) {
+            if (num % j == 0) {
+                c++;
+            }
+        }
+        if (c == 2) {
+          
+            return true
+        }
+        else
+        return false
+
+    },
 
 
 
@@ -403,7 +420,7 @@ module.exports = {
 
     bubbleSort(arr) {
         for (let i = 0; i < arr.length; i++) {
-            for (let j = i+1; j < arr.length; j++) {
+            for (let j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
                     var temp = arr[i];
                     arr[i] = arr[j]
@@ -422,29 +439,23 @@ module.exports = {
             var c = arr[i];
             var j = i - 1
             while (j >= 0 && arr[j] > c) {
-                //console.log(j+"  "+i)
-                //console.log(arr[j]+" "+arr[i]+" in arr")
                 console.log(arr)
                 arr[j + 1] = arr[j]
                 j = j - 1
             }
-
             arr[j + 1] = c
         }
-
-
         console.log(arr)
-
     },
 
     temperaturConversion(num, read) {
-        if (num == 0) {
-            var temp = read.question("enter temperature in fahrenheit")
+        if (num == 2) {
+            var temp = read.question("Enter temperature in fahrenheit:")
             var teminC = (temp - 32) * (5 / 9)
             console.log(temp + "°F Conversion of fahrenheit to Celsius is :" + teminC + "°C")
         }
         if (num == 1) {
-            var temp = read.question("enter temperature in  Celsius")
+            var temp = read.question("Enter temperature in Celsius:")
             var teminC = (temp * (9 / 5)) + 32
             console.log(temp + "°C Conversion of  Celsius to fahrenheit  is :" + teminC + "°F")
         }
@@ -605,6 +616,7 @@ module.exports = {
         var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7
         d0 = Math.floor(d0)
         console.log(d0)
+
         var res = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "saturday"];
         if (d0 <= res.length) {
             console.log("The day falls on :" + res[d0])
@@ -612,6 +624,7 @@ module.exports = {
         else {
             console.log("Invalid day ")
 
+            return d0
         }
 
 
@@ -661,17 +674,16 @@ module.exports = {
     },
 
 
-    writeFile(fileName,data)
-    {
-    const fs = require('fs');
-fs.writeFile(fileName, data, function(err) {
-if(err) {
-    return console.log(err);
-}
+    writeFile(fileName, data) {
+        const fs = require('fs');
+        fs.writeFile(fileName, data, function (err) {
+            if (err) {
+                return console.log(err);
+            }
 
-//console.log("The file is saved!");
-}); 
-},
+            //console.log("The file is saved!");
+        });
+    },
 
 
     binarySearchWord(res1, low, high, target) {
@@ -722,19 +734,16 @@ if(err) {
         return mid;
     },
 
-
     sqrtNewtonsMethod(c) {
         var t = c
-
         const epsilon = 1e-15;
         while (Math.abs(t - c / t) > epsilon * t) {
             var t1 = c / t + t
             t = t1 / 2
         }
         console.log("squre root for " + c + " is:" + t)
-
-
     },
+
     mergeSort(arr, l, r) {
         if (l < r) {
             var m = l + Math.floor((r - l) / 2)
@@ -742,68 +751,61 @@ if(err) {
             this.mergeSort(arr, m + 1, r)
             this.merge(arr, l, m, r)
         }
-
     },
+
     merge(arr, l, m, r) {
         console.log(arr)
-       // console.log("jhvgjh")
-        var i,j,k;
-        var n=m-l+1;
-        var n1=r-m;
-        var aa=[]
-        var bb=[]
-        for(i=0;i<n;i++)
-        aa[i]=arr[l+i]
-        console.log(aa+" aa")
-        for(j=0;j<n1;j++)
-        bb[j]=arr[m+j+1]
-        console.log(bb+" bb")
-        i=0;
-        j=0;
-        k=l;
-        while (i < n && j < n1) 
-        { 
-            if (aa[i] <= bb[j]) 
-            { 
-                arr[k] = aa[i]; 
-                i++; 
-            } 
-            else
-            { 
-                arr[k] = bb[j]; 
-                j++; 
-            } 
-            k++; 
-        } 
-        while (i < n) 
-        { 
-            arr[k] = aa[i]; 
-            i++; 
-            k++; 
-        } 
-        while (j < n1) 
-        { 
-            arr[k] = bb[i]; 
-            j++; 
-            k++; 
-        } 
+        // console.log("jhvgjh")
+        var i, j, k;
+        var n = m - l + 1;
+        var n1 = r - m;
+        var aa = []
+        var bb = []
+        for (i = 0; i < n; i++)
+            aa[i] = arr[l + i]
+        console.log(aa + " aa")
+        for (j = 0; j < n1; j++)
+            bb[j] = arr[m + j + 1]
+        console.log(bb + " bb")
+        i = 0;
+        j = 0;
+        k = l;
+        while (i < n && j < n1) {
+            if (aa[i] <= bb[j]) {
+                arr[k] = aa[i];
+                i++;
+            }
+            else {
+                arr[k] = bb[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < n) {
+            arr[k] = aa[i];
+            i++;
+            k++;
+        }
+        while (j < n1) {
+            arr[k] = bb[i];
+            j++;
+            k++;
+        }
 
-console.log(arr)
+        console.log(arr)
 
     },
-    vendingMachine(arr,amount){
-        var notes=0
-        for(let i=0;i<arr.length;i++)
-        {
-            if(amount/arr[i]>=1)
-            {
-                var c=Math.floor(amount/arr[i])
-                notes=notes+c
-                console.log(arr[i]+" notes are :"+c)
-                amount=amount%arr[i]
+    vendingMachine(arr, amount) {
+        var notes = 0
+        for (let i = 0; i < arr.length; i++) {
+            if (amount / arr[i] >= 1) {
+                var c = Math.floor(amount / arr[i])
+                notes = notes + c
+                console.log(arr[i] + " notes are :" + c)
+                amount = amount % arr[i]
             }
         }
-        console.log("total number of notes :"+notes)
+        console.log("total number of notes :" + notes)
 
     },
 

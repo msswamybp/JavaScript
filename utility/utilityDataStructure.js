@@ -1,10 +1,74 @@
 var T=require('util')
+var req = require('util');
+var utility = require('../utility/utility');
 class Node {
 
     constructor(data) {
-        // console.log(data+" in node")
         this.data = data
         this.next = null
+    }
+
+}
+class StackLinkedList{
+    constructor(){
+        this.size=0
+        this.head=null
+
+    }
+    push(data)
+    {
+        var n=new Node(data)
+        if(this.head==null)
+        {
+            this.head=n
+            this.size++
+        }
+        else{
+            var temp=this.head
+            while(temp.next)
+            {
+                temp=temp.next
+            }
+           temp.next=n
+            this.size++
+        }
+
+    }
+    pop(){
+        if(this.head==null){
+            console.log("Stack underflow");
+            return null;
+        }
+        var curr=this.head;
+        var pre=this.head;
+        if(curr.next==null){
+            this.head=null;
+            return curr.element;
+        }
+        while(curr.next != null){
+            pre=curr;
+            curr=curr.next;
+    
+        }
+        pre.next=null;
+        this.size--;
+    return curr.element;
+    }
+    getSize()
+    {
+        return this.size
+    }
+    print()
+    {
+        var st=""
+        var temp=this.head
+        while(temp)
+        {
+            console.log(temp.data)
+            st=st+" "+ temp.data
+            temp=temp.next
+        }
+        return st
     }
 
 }
@@ -68,7 +132,60 @@ class Stack {
     }
 }
 //module.exports={Node}
+class QueueLinked{
+    constructor(){
+        this.size=0
+        this.head=null
 
+    }
+    push(data)
+    {
+        var n=new Node(data)
+        if(this.head==null)
+        {
+            this.head=n
+            this.size++
+        }
+        else{
+            var temp=this.head
+            while(temp.next)
+            {
+                temp=temp.next
+            }
+           temp.next=n
+            this.size++
+        }
+
+    }
+    pop(){
+        if(this.head==null){
+            console.log("Stack underflow");
+            return null;
+        }
+        else{
+            n.next=this.head.next
+            this.head=n
+            this.size--
+            
+        }
+    }
+        getSize()
+        {
+            return this.size
+        }
+        print()
+        {
+            var st=""
+            var temp=this.head
+            while(temp)
+            {
+                console.log(temp.data)
+                st=st+" "+ temp.data
+                temp=temp.next
+            }
+            return st
+        }
+}
 class LinkedList {
     constructor() {
         this.head = null
@@ -176,7 +293,7 @@ class LinkedList {
 }
 
 //module.exports={LinkedList}
-module.exports = { LinkedList, Stack ,
+module.exports = { LinkedList, Stack ,StackLinkedList,QueueLinked,
     print2DArray2(rows, col,arr1) {
         var arr = [];
         
@@ -208,7 +325,59 @@ module.exports = { LinkedList, Stack ,
 
     },
     
-
+    anagramAndPrime(){
+        var arr = [];
+        var arr2=[];
+        var array = [["0-100 "], ["100-200 "], ["200-300 "], ["300-400 "], ["400-500 "], ["500-600 "], ["600-700 "], ["700-800 "], ["800-900 "], ["900-1000 "]];
+        for (let i = 2; i < 1000; i++) {
+            if (utility.isPrimeNumber(i)) {
+                arr.push(i);
+        
+            }
+        }
+        
+        
+        var range = 100, k = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (utility.checkNumberAreAnagram(arr[i],arr[j])) {
+                    if (arr[i] <= range) {
+                        if (arr[j] <= range) {
+                            array[k].push(arr[i]);
+                            arr2.push(arr[i])
+                            arr2.push(arr[j])
+                            array[k].push(arr[j]);
+                        }
+                    } else {
+                        range = range + 100;
+                        k++;
+                        if (arr[j] <= range) {
+                            array[k].push(arr[i]);
+                            array[k].push(arr[j]);
+                        }
+                    }
+                }
+            }
+        }
+        console.log("The Number which are prime and anagram ");
+        
+        for (let i = 0; i < array.length; i++) {
+          
+            for (let j = 0; j < array[i].length; j++) {
+                req.print(array[i][j]);
+                if (j == 0) {
+                    req.print(" => ");
+                } else {
+                    if (j != array[i].length - 1)
+                        req.print(",")
+                }
+            }
+            console.log();
+           
+        
+        }
+        return arr2
+    },
 
 
 

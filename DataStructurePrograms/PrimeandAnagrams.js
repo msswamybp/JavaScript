@@ -5,6 +5,7 @@ var array1 = [["0-100 "], ["100-200  "], ["200-300 "], ["300-400 "], ["400-500 "
 var i = 0; var j = 1; var range = 100;
 var arr = []
 var arr1 = []
+var arr2 = []
 for (let prime = 2; prime <= 1000; prime++) {
     if (utility.isPrimeNumber(prime)) {
 
@@ -16,13 +17,14 @@ for (let prime = 2; prime <= 1000; prime++) {
             for (let i = 0; i < b.length; i++) {
                 v = v + b[i]
             }
-            if(!arr.includes(v))
-            {
+            if (!arr.includes(v)) {
                 arr.push(v)
-            array[i][j] = prime;
-            j++;
+                array[i][j] = prime;
+                j++;
             }
            
+           
+
 
         }
         else {
@@ -33,15 +35,15 @@ for (let prime = 2; prime <= 1000; prime++) {
             for (let i = 0; i < b1.length; i++) {
                 v1 = v1 + b[i]
             }
-            if(!arr1.includes(v1))
-            {
+            if (!arr1.includes(v1)) {
                 arr1.push(v1)
-            j = 1;
-            range = range + 100;
-            i++;
-            array[i][j] = prime;
+                j = 1;
+                range = range + 100;
+                i++;
+                array[i][j] = prime;
             }
-            
+           
+
         }
     }
 }
@@ -53,14 +55,4 @@ for (var i = 0; i < array.length; i++) {
     //utility.mark1(array)
     console.log();
 }
-console.log();
-console.log("The prime numbers that are  Anagram presents in the given range ");
-for (var i = 0; i < array1.length; i++) {
-    for (var j = 0; j < array1[i].length; j++) {
-        req.print(array1[i][j] + " ");
-    }
-    //utility.mark1(array)
-    console.log();
-}
-console.log();
-
+console.log(arr2+" uhykjuh")

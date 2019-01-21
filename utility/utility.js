@@ -316,17 +316,36 @@ module.exports = {
 
             }
             if (s == s1) {
-                console.log("given words are anagram")
+                return true
             }
-            else
-                console.log("given words are not anagram")
         }
-        else
-            console.log("words are not anagram")
+        return false
 
 
     },
+    checkNumberAreAnagram(num, num1) {
+        var s = ""+num;
+        var s1 = ""+num1;
+       var ss=""
+       var ss1=""
+        var arr = s.split("");
+        arr.sort();
+        var arr1 = s1.split("");
+        arr1.sort();
+        if (s.length == s1.length) {
+            for (let i = 0; i < s.length; i++) {
+                ss = ss + arr[i];
+                ss1 = ss1 + arr1[i];
 
+            }
+            if (ss == ss1) {
+                return true
+            }
+        }
+        return false
+
+
+    },
 
 
     checkNumbesArePrimeNumber(range) {

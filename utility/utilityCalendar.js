@@ -6,6 +6,7 @@ module.exports = {
         var m0 = m + 12 * Math.floor((14 - m) / 12) - 2
         var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7
         d0 = Math.floor(d0)
+        console.log(d0+" jhgjhgjh")
         return d0
     },
     monthof(m) {

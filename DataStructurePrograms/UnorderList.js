@@ -6,7 +6,7 @@ var arr=M.fileCall()
 var l=new D.LinkedList;
 for(let i=0;i<arr.length;i++)
 {
-    console.log(arr[i])+"ghjgjh"
+    console.log(arr[i])
     l.add(arr[i])
 }
 console.log(l+" in main")

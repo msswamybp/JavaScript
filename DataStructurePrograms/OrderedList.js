@@ -2,7 +2,7 @@ var D=require('../utility/utilityDataStructure')
 var M=require('../utility/utility')
 var read=require('readline-sync')
 var arr=M.fileCall()
-//var arr=[10,8,5,5,10]
+arr.sort()
 var l=new D.LinkedList;
 console.log(arr+" in ")
 var arr1=M.insertionSort(arr)

@@ -1,20 +1,35 @@
 var D=require('../utility/utilityDataStructure')
-var D=require('../utility/utilityCalendar');
-var weekdays=new D.QueueLinked
-var =new D.QueueLinked
-var month=+process.argv[2]
-var year=+process.argv[3]
-var d=D.dayOfWeek(1,month,year)
-console.log(d)
-var res = ["Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "sat"];
-if (d <= res.length) {
-    console.log("The day falls on :" + res[d])
-}
-var days=D.monthof(month)
-var t1=M.findLeapyear(year)
-if(t1){
-    if(month==2)
+var M=require('../utility/utility')
+var req=require('util')
+var read=require('readline-sync')
+var arr=M.fileCall()
+var num=read.questionInt("enter number :")
+var arr1=new Array(10);
+for(let i=0;i<arr.length;i++)
+{ 
+    var num=Number(arr[i])
+    var n=arr[i]%10
+    if(arr1[n]===undefined)
     {
-        days=29;
+        arr1[n]=new D.LinkedList
+        arr1[n].add(num)
     }
+    else
+    {
+        arr1[n].add(num)
+    }
+    
+}
+for (let i = 0; i < arr1[i].length; i++) {
+  
+    for (let j = 0; j < arr1[i].length; j++) {
+        req.print(arr1[i][j]);
+        if (j == 0) {
+            req.print(" => ");
+        } else {
+            if (j != arr1[i].length - 1)
+                req.print(",")
+        }
+    }
+    console.log();
 }

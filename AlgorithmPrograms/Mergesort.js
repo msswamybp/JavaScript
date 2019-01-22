@@ -13,4 +13,10 @@ while(num!=arr.length)
 }
 var l=0;
 var h=arr.length;
-D.mergeSort(arr,l,h)
+function Merge(){
+    
+    D.mergeSort(arr)
+    console.log("Merge sorted result ",arr);
+    }
+    Merge();
+ 

@@ -6,6 +6,7 @@ for (let prime = 2; prime <= 1000; prime++) {
     if (utility.isPrimeNumber(prime)) {
         if (prime <= range) {
             array[i][j] = prime;
+            
             j++;
             
         }

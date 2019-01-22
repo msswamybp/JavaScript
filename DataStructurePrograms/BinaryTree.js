@@ -1,0 +1,8 @@
+var D=require('../utility/utilityDataStructure')
+var read=require('readline-sync')
+var num=read.questionInt("enter the number :")
+var fact=D.binaryTree(num)
+var fact1=D.binaryTree(num*2)
+var fact2=D.binaryTree(num+1)
+var b=fact1/(fact2*fact)
+console.log(b)

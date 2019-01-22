@@ -316,9 +316,11 @@ module.exports = {
 
             }
             if (s == s1) {
+                console.log("words are angram")
                 return true
             }
         }
+        console.log("words are  not angram")
         return false
 
 
@@ -634,7 +636,8 @@ module.exports = {
         var m0 = m + 12 * Math.floor((14 - m) / 12) - 2
         var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7
         d0 = Math.floor(d0)
-        console.log(d0)
+        console.log(d0+" jhgjhgjh")
+       return d0
 
         var res = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "saturday"];
         if (d0 <= res.length) {
@@ -686,8 +689,7 @@ module.exports = {
     fileCall() {
         var fileStream = require('fs');
         var f = fileStream.readFileSync('aru.txt', 'utf8');
-        console.log(f + " in")
-        var arr = f.split(',');
+        var arr = f.split(' ');
         console.log(arr + "   in arr")
         return arr;
     },
@@ -763,57 +765,61 @@ module.exports = {
         console.log("squre root for " + c + " is:" + t)
     },
 
-    mergeSort(arr, l, r) {
-        if (l < r) {
-            var m = l + Math.floor((r - l) / 2)
-            this.mergeSort(arr, l, m)
-            this.mergeSort(arr, m + 1, r)
-            this.merge(arr, l, m, r)
+    mergeSort(res) {
+        var n = res.length;
+        //if size is less than 2 return that.
+        if (n < 2) {
+            return;
         }
+        //cal mid value 
+        var mid = Math.floor(n / 2);
+        var left = [mid];
+        var right = [n - mid];
+       //store  elements in left array which are present before the mid   
+        for (let i = 0; i < mid; i++) {
+            left[i] = res[i];
+        }
+        //store  elements in left array which are present before the mid  
+        for (let j = mid; j < n; j++) {
+            right[j - mid] = res[j];
+        }
+        //call mergesort for left halve 
+        this.mergeSort(left);
+         //call mergesort for left halve 
+        this.mergeSort(right);
+        this.merge(left, right, res);
+
     },
 
-    merge(arr, l, m, r) {
-        console.log(arr)
-        // console.log("jhvgjh")
-        var i, j, k;
-        var n = m - l + 1;
-        var n1 = r - m;
-        var aa = []
-        var bb = []
-        for (i = 0; i < n; i++)
-            aa[i] = arr[l + i]
-        console.log(aa + " aa")
-        for (j = 0; j < n1; j++)
-            bb[j] = arr[m + j + 1]
-        console.log(bb + " bb")
-        i = 0;
-        j = 0;
-        k = l;
-        while (i < n && j < n1) {
-            if (aa[i] <= bb[j]) {
-                arr[k] = aa[i];
+    merge(arr, brr, crr) {
+        var i = 0; var j = 0;
+        var k = 0;
+        //merge elements into crr[]
+        while (i < arr.length && j < brr.length) {
+            if (arr[i] <= brr[j]) {
+                crr[k] = arr[i]
                 i++;
             }
             else {
-                arr[k] = bb[j];
+                crr[k] = brr[j];
                 j++;
             }
             k++;
         }
-        while (i < n) {
-            arr[k] = aa[i];
+        // if arr[] is greater than brr[], push all arr[] into crr[]
+        while (i < arr.length) {
+            crr[k] = arr[i];
             i++;
             k++;
         }
-        while (j < n1) {
-            arr[k] = bb[i];
+         // if arr[] is lesser than brr[], push all brr[] into crr[]
+        while (j < brr.length) {
+            crr[k] = brr[j];
             j++;
             k++;
         }
-
-        console.log(arr)
-
-    },
+        return crr;
+},
     vendingMachine(arr, amount) {
         var notes = 0
         for (let i = 0; i < arr.length; i++) {

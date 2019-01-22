@@ -43,16 +43,16 @@ class StackLinkedList{
         var pre=this.head;
         if(curr.next==null){
             this.head=null;
-            return curr.element;
+            return curr.data;
         }
-        while(curr.next != null){
+        while(curr.next){
             pre=curr;
             curr=curr.next;
-    
         }
+        var data=curr.data
         pre.next=null;
         this.size--;
-    return curr.element;
+    return data
     }
     getSize()
     {
@@ -138,7 +138,7 @@ class QueueLinked{
         this.head=null
 
     }
-    push(data)
+    enqueue(data)
     {
         var n=new Node(data)
         if(this.head==null)
@@ -157,15 +157,17 @@ class QueueLinked{
         }
 
     }
-    pop(){
+    dequeue(){
         if(this.head==null){
             console.log("Stack underflow");
             return null;
         }
         else{
-            n.next=this.head.next
-            this.head=n
+            var temp=this.head
+            var data=temp.data
+            this.head=temp.next
             this.size--
+            return data
             
         }
     }
@@ -237,30 +239,44 @@ class LinkedList {
         }
         return arr.length
     }
-    insert(pos, data) {
-        if (pos < 0 && pos > this.size)
-            return false
-        else {
-            var node = new Node(data)
-            if (pos == 0) {
-                node.next = this.head
-                this.head = node
-            }
-            else {
-                var temp = this.head
-                var t = 0
-                while (t < pos) {
-                    t++
-                    temp = temp.next
-                }
-                node.next = temp
-                temp = node
-            }
+    insertFirst(element){
+        var n=new Node(element);
+        if(this.head==null){
+             this.head=n;
+             this.size++;
+             return;
+        }else{
+            n.next=this.head;
+            this.head=n;
+            this.size++;
+            return;
         }
-
-
     }
 
+    insert(index,element){
+        var n=new Node(element);
+        if(index==1){
+            n.next=head.next
+            head=n
+            this.size++
+        }
+         if(this.head==null){
+             return;
+         }
+         
+         var c=1//pre=this.head,curr=this.head;
+         var temp=this.head
+         while(c<index)
+         {
+            
+            temp=temp.next
+             c++
+         }
+         n.next=temp.next
+         temp=n
+         this.size++
+        
+        }
     remove(data) {
         var temp = this.head
         var t = null
@@ -344,6 +360,7 @@ module.exports = { LinkedList, Stack ,StackLinkedList,QueueLinked,
                     if (arr[i] <= range) {
                         if (arr[j] <= range) {
                             array[k].push(arr[i]);
+                            
                             arr2.push(arr[i])
                             arr2.push(arr[j])
                             array[k].push(arr[j]);
@@ -378,7 +395,15 @@ module.exports = { LinkedList, Stack ,StackLinkedList,QueueLinked,
         }
         return arr2
     },
-
+binaryTree(num)
+{
+    var fact=1
+    for(let i=1;i<=num;i++)
+    {
+        fact=fact*i
+    }
+    return fact
+}
 
 
 

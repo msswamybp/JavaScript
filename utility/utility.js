@@ -42,6 +42,7 @@ module.exports = {
 
 
 
+    
     findPower(num) {
         var x = 0;
         var power = 1;

@@ -209,8 +209,6 @@ class LinkedList {
         this.size++
     }
     contain(data1) {
-        console.log(data1 + " in data")
-        console.log(data1 + " jhjh")
         var c = 0;
         if (this.head == null)
             console.log("list is empty")
@@ -218,7 +216,6 @@ class LinkedList {
             var temp = this.head
             while (temp.next) {
                 if (temp.data == data1) {
-                    console.log("hi " + data1)
                     return true
                 }
                 else
@@ -304,6 +301,7 @@ class LinkedList {
             st = st + " " + temp.data
             temp = temp.next
         }
+        console.log(st)
         return st
     }
 }
@@ -403,6 +401,24 @@ binaryTree(num)
         fact=fact*i
     }
     return fact
+},
+palindram(word)
+{
+    for(let i=0;i<arr.length;i++)
+{
+    d.addFront(arr[i])
+}
+var l=word.length/2
+var m=Math.floor(l)
+var c=0
+while(c!=m)
+{
+    if(d.removeRear!=d.removeFront)
+    return false;
+    c++
+}
+return true;
+
 }
 
 

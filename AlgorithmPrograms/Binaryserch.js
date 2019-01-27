@@ -13,7 +13,11 @@ while(num!=arr.length)
 }
 var arr1=D.bubbleSort(arr)
 var num=read.questionInt("enter the number to be search: ")
- var b=D.binarySearch(arr1,num)
+var time=D.Stopwatchmill()
+var b=D.binarySearch(arr1,num)
+var time1=D.Stopwatchmill()
+var totaltime=time1-time;
+console.log(totaltime+" millesecond taken to exicute ")
  if(b==true)
  console.log("number is present")
  else

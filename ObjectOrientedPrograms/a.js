@@ -1,0 +1,7 @@
+var t=require('util')
+console.log("ghjghjg")
+console.log("ghjghjg")
+console.log("ghjghjg")
+t.print("hjgfhfh")
+t.print("hjgfhfh")
+t.print("hjgfhfh")

@@ -1,6 +1,6 @@
 var D=require('../utility/utility');
 var read=require('readline-sync');
-var number=read.questionInt("enter the number ")
+var number=read.questionInt("enter the number: ")
 var arr=[];
 while(arr.length!=number)
 {

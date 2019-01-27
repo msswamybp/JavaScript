@@ -1,0 +1,53 @@
+{
+    "Rice": [
+        {
+            "ricename": "Basumathi",
+            "weight": 40,
+            "price": 54
+        },
+        {
+            "ricename": "nandi",
+            "weight":10,
+            "price": 75
+        },
+        {
+            "ricename": "shiva",
+            "weight": 20,
+            "price": 85
+        }
+    ],
+    "Pulses":[
+        {
+            "pulse_name":"AA",
+            "weight":5,
+            "price":100
+        },
+        {
+            "pulse_name":"BB",
+            "weight":5,
+            "price":140
+        },
+        {
+            "pulse_name":"CC",
+            "weight":10,
+            "price":50
+        }
+    ],
+    "Wheat":[
+        {
+            "wheat_name":"Wa",
+            "weight":10,
+            "price":20
+        },
+        {
+            "wheat_name":"Wa",
+            "weight":10,
+            "price":25
+        },
+        {
+            "wheat_name":"Wa",
+            "weight":10,
+            "price":30
+        }
+    ]
+}

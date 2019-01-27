@@ -21,6 +21,7 @@
  * '-sync' helps readline to sync even when the input/output stream is redirected.
  */
 var D=require('../utility/utility');
+
 /**
  * import the Utility class to use the functionalities.
  */
@@ -34,4 +35,8 @@ while(num!=arr.length)
     arr.push(number)
 }
 //var res=D.fileCall();
+var time=D.Stopwatchmill()
 D.bubbleSort(arr)
+var time1=D.Stopwatchmill()
+var totaltime=time1-time;
+console.log(totaltime+" millesecond taken to exicute ")

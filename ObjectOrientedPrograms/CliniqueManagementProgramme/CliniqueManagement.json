@@ -1,0 +1,28 @@
+{
+    "Doctors": [
+        {
+            "Name": "DR Shiva",
+            "Id": "om",
+            "Specialization": "all",
+            "Availability": "anytime"
+        },
+        {
+            "Name": "DR Guru",
+            "Id": "Arivu",
+            "Specialization": "all",
+            "Availability": "anytime"
+        }
+    ],
+    "Patient": [
+        {
+            "Name": "swamy",
+            "mobilenumber": "9972421973",
+            "Id": "mss"
+        },
+        {
+            "Name": "arun",
+            "mobilenumber": "9632951787",
+            "Id": "arunbp"
+        }
+    ]
+}

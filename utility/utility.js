@@ -37,12 +37,12 @@ module.exports = {
         }
         else
             console.log("is not a leap year")
-            return false
+        return false
     },
 
 
 
-    
+
     findPower(num) {
         var x = 0;
         var power = 1;
@@ -74,15 +74,17 @@ module.exports = {
     printFactors(num) {
         var arr = [];
         var i;
-        for (i = 2; i <= num; i++) {
+        var c = 0
+        for (i = 2; i<= num; i++) {
             while (num % i == 0) {
-
+                c++
                 arr.push(i);
                 num = num / i;
             }
 
 
         }
+        console.log(c)
         console.log(arr);
     },
 
@@ -246,6 +248,13 @@ module.exports = {
     },
 
 
+    
+    Stopwatchmill() {
+        var date = new Date();
+        return date.getMilliseconds();
+    },
+
+
 
     findTime(read) {
         var sptime
@@ -327,10 +336,10 @@ module.exports = {
 
     },
     checkNumberAreAnagram(num, num1) {
-        var s = ""+num;
-        var s1 = ""+num1;
-       var ss=""
-       var ss1=""
+        var s = "" + num;
+        var s1 = "" + num1;
+        var ss = ""
+        var ss1 = ""
         var arr = s.split("");
         arr.sort();
         var arr1 = s1.split("");
@@ -368,19 +377,19 @@ module.exports = {
         console.log("prime number in given range are :")
         console.log(arr)
     },
-    isPrimeNumber(num){
-        var c=0
+    isPrimeNumber(num) {
+        var c = 0
         for (let j = num; j >= 1; j--) {
             if (num % j == 0) {
                 c++;
             }
         }
         if (c == 2) {
-          
+
             return true
         }
         else
-        return false
+            return false
 
     },
 
@@ -450,7 +459,7 @@ module.exports = {
                 }
             }
         }
-        console.log(arr)
+        
         return arr
 
     },
@@ -637,8 +646,8 @@ module.exports = {
         var m0 = m + 12 * Math.floor((14 - m) / 12) - 2
         var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7
         d0 = Math.floor(d0)
-        console.log(d0+" jhgjhgjh")
-       return d0
+        console.log(d0 + " jhgjhgjh")
+        return d0
 
         var res = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "saturday"];
         if (d0 <= res.length) {
@@ -776,7 +785,7 @@ module.exports = {
         var mid = Math.floor(n / 2);
         var left = [mid];
         var right = [n - mid];
-       //store  elements in left array which are present before the mid   
+        //store  elements in left array which are present before the mid   
         for (let i = 0; i < mid; i++) {
             left[i] = res[i];
         }
@@ -786,7 +795,7 @@ module.exports = {
         }
         //call mergesort for left halve 
         this.mergeSort(left);
-         //call mergesort for left halve 
+        //call mergesort for left halve 
         this.mergeSort(right);
         this.merge(left, right, res);
 
@@ -813,14 +822,14 @@ module.exports = {
             i++;
             k++;
         }
-         // if arr[] is lesser than brr[], push all brr[] into crr[]
+        // if arr[] is lesser than brr[], push all brr[] into crr[]
         while (j < brr.length) {
             crr[k] = brr[j];
             j++;
             k++;
         }
         return crr;
-},
+    },
     vendingMachine(arr, amount) {
         var notes = 0
         for (let i = 0; i < arr.length; i++) {

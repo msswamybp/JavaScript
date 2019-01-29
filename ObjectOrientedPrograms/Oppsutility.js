@@ -239,6 +239,144 @@ module.exports = {
         }
 
 
+    },
+    cliniquemanagement(data)
+    {
+        var c=0;
+        var date=new Date()
+        var doctors=data.Doctors;
+        var patient=data.Patient
+        console.log("Enter 1 to search Doctor by name, id, Specialization or Availability");
+        console.log("Enter 2 to search patient by name, mobile number or id");
+        console.log("Enter 3  to take appointment with the doctor")
+        var num=read.questionInt("Enter 1 or 2 ,3:")
+        if(num==1)
+        {
+            var number=read.questionInt("Enter \n 1 to search Doctor by Name \n 2.by Id \n 3.by Specialization:")
+            if(number==1)
+            {
+                var name1=read.question("Enter Doctor name:")
+                for (const key in doctors) {
+                    if(doctors[key].Name==name1)
+                    {
+                        console.log("-------Your Doctor Information is-------")
+                        console.log(doctors[key])
+
+                    }
+                  
+                }
+
+            }
+            if(number==2)
+            {
+                var Id1=read.question("Enter Doctor Id:")
+                for (const key in doctors) {
+                    if(doctors[key].Id==Id1)
+                    {
+                        console.log("-------Your Doctor Information is-------")
+                        console.log(doctors[key])
+
+                    }
+                  
+                }
+
+            }
+            if(number==3)
+            {
+                var sp=read.question("Enter Doctor Specialization:")
+                for (const key in doctors) {
+                    if(doctors[key].Specialization==sp)
+                    {
+                        console.log("-------Your Doctor Information is-------")
+                        console.log(doctors[key])
+
+                    }
+                  
+                }
+
+            }
+        }
+        if(num==2)
+        {
+            var number1=read.questionInt("Enter \n 1 to search patient by Name \n 2.by Id \n 3.by mobilenumber:")
+            if(number1==1)
+            {
+                var name1=read.question("Enter patient name:")
+                for (const key in patient) {
+                    if(patient[key].Name==name1)
+                    {
+                        console.log("-------Your patient Information is-------")
+                        console.log(patient[key])
+
+                    }
+                  
+                }
+
+            }
+            if(number1==2)
+            {
+                var Id1=read.question("Enter patient Id:")
+                for (const key in patient) {
+                    if(patient[key].Id==Id1)
+                    {
+                        console.log("-------Your patient Information is-------")
+                        console.log(patient[key])
+
+                    }
+                  
+                }
+
+            }
+            if(number1==3)
+            {
+                var mobilenumber1=read.question("Enter patient mobilenumber:")
+                for (const key in patient) {
+                    if(patient[key].mobilenumber==mobilenumber1)
+                    {
+                        console.log("-------Your patient Information is-------")
+                        console.log(patient[key])
+
+                    }
+                  
+                }
+
+            }
+
+        }
+        if(num==3)
+        {
+            c++
+            if(c>5){
+                var q=Math.floor(c/5)
+                day=q+date.getDate();
+            }
+            else{
+                day=date.getDate();
+            }
+            for (const key in doctors) {
+                console.log(doctors[key].Name)
+            }
+        var pname=read.question("Enter name of patient:")
+        var Id1=Math.floor(Math.random()*100);
+        
+        var mobilenumber1=read.questionInt("Enter mobilenumber of patient:")
+        data.Patient.push(
+            {
+                Name:pname,
+                mobilenumber:mobilenumber1,
+                Id:Id1,
+                appointmentto:name
+
+            }
+        )
+        
+
+        var d = file.writeFileSync('clinic.json', JSON.stringify(data))
+            
+            
+            
+        }
     }
+   
 
 }

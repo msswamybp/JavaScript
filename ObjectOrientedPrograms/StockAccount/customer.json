@@ -1,0 +1,15 @@
+{
+    "customer": [
+        {
+            "name": "swamy",
+            "id": "66",
+            "symbol": "A",
+            "amount": 100,
+            "share": 5
+        },
+        {
+            "name": "sss",
+            "id": 13
+        }
+    ]
+}

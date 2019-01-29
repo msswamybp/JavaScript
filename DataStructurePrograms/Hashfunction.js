@@ -56,7 +56,7 @@ function hashing() {
                 //arr[index].print();
                 str = str + arr[index].print();
                 if (arr[index] !== 'undefined' && index < arr.length - 2) {
-                    str = str + " ";
+                
                 }
             } catch (err) {
                 console.log("Empty index");
@@ -64,7 +64,7 @@ function hashing() {
             }
 
         } console.log(str);
-        utility.writeFile('hashingNumber.txt', str);
+        utility.writeFile('hashnumber.txt', str);
 
         console.log("\n\n");
     } else {

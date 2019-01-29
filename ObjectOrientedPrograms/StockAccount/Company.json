@@ -1,0 +1,25 @@
+{
+    "company":[
+        {
+            "name":"MSS",
+            "symbol":"",
+            "share":"10",
+            "price":"120"
+        },
+        {
+            "name":"TCS",
+            "symbol":"T",
+            "share":"12",
+            "price":"100"
+        },
+        {
+            "name":"SRS",
+            "symbol":"s",
+            "share":"100",
+            "price":"100"
+        }
+
+
+
+    ]
+}

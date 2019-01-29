@@ -2,27 +2,34 @@
     "Doctors": [
         {
             "Name": "DR Shiva",
-            "Id": "50",
-            "Specialization": "",
-            "Availability": "AM"
+            "Id": "om",
+            "Specialization": "all",
+            "Availability": "anytime"
         },
         {
             "Name": "DR Guru",
-            "Id": "55",
+            "Id": "Arivu",
             "Specialization": "all",
-            "Availability": "PM"
+            "Availability": "anytime"
         }
     ],
     "Patient": [
         {
             "Name": "swamy",
             "mobilenumber": "9972421973",
-            "Id": "mss"
+            "Id": "mss",
+            
         },
         {
             "Name": "arun",
             "mobilenumber": "9632951787",
             "Id": "arunbp"
+        },
+        {
+            "Name": "ss",
+            "mobilenumber": 997242197355,
+            "Id": 69,
+            "appointmentto": "DR Shiva"
         }
     ]
 }

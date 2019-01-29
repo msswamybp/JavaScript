@@ -1,1 +1,29 @@
-{"Stock":[{"stockname":"MSS","numberofshare":50,"shareprice":10000},{"stockname":"TCS","numberofshare":50,"shareprice":5000},{"stockname":"BridgeLabz ","numberofshare":50,"shareprice":4000},{"stockname":"Infosys","numberofshare":50,"shareprice":8000},{"stockname":"f","shareprice":5,"numberofshare":5}]}
+{
+    "Stock": [
+        {
+            "stockname": "BridgeLabz ",
+            "numberofshare": 50,
+            "shareprice": 4000
+        },
+        {
+            "stockname": "Infosys",
+            "numberofshare": 50,
+            "shareprice": 8000
+        },
+        {
+            "stockname": "f",
+            "shareprice": 5,
+            "numberofshare": 5
+        },
+        {
+            "stockname": "MSS",
+            "shareprice": 55,
+            "numberofshare": 44
+        },
+        {
+            "stockname": "sss",
+            "shareprice": 55,
+            "numberofshare": 66
+        }
+    ]
+}

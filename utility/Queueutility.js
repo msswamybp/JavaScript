@@ -26,7 +26,6 @@ class Queue {
     }
     deque() {
         if (this.front == -1) {
-            console.log("Queue is empty");
             return null;
         }
         var ele = this.items[this.front++];

@@ -124,9 +124,11 @@ module.exports = {
         var num = 0;
         while (num != number) {
             var x = Math.round(Math.random() * number)
+            console.log(x)
             if (!arr.includes(x)) {
                 arr.push(x);
                 num++;
+                console.log(arr)
             }
         }
         console.log(arr)

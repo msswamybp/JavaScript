@@ -12,9 +12,12 @@ for(let i in d){
     console.log("The total value of ", d[i].stockname, " share is ", d[i].numberofshare * d[i].shareprice);
     sum=sum+total
     i=new D.Stock(name,numberofshare,shareprice)
+  // var d=i.shareprice()
+   
      
 }
 console.log("value of total stocks:" + sum)
 
 //D.stockReport(object)
-//var o=new D.Stock.shareprice
+//var o=new D.Stock
+//o.shareprice()

@@ -18,7 +18,6 @@ switch (num) {
         break;
     case 3: object.print(data1)
         break;
-    case 4: console.log("tata bye bye..")
-        break;
+ 
 
 }

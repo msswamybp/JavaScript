@@ -68,6 +68,7 @@ class StackLinkedList{
             st=st+" "+ temp.data
             temp=temp.next
         }
+        
         return st
     }
 
@@ -195,6 +196,7 @@ class LinkedList {
 
     }
     add(data) {
+       
         var node = new Node(data)
         if (this.head == null) {
             this.head = node;
@@ -205,6 +207,7 @@ class LinkedList {
                 temp = temp.next
             }
             temp.next = node
+           
         }
         this.size++
     }
@@ -303,6 +306,19 @@ class LinkedList {
         }
         console.log(st)
         return st
+    }
+    printele(){
+       
+        var temp=this.head
+        while(temp){
+            var st=""
+            st=st+"name: "+temp.data.name+", share:"+temp.data.share+",price: "+temp.data.price
+            console.log(st)
+            temp=temp.next
+        }
+    }
+    getsize(){
+        return this.size;
     }
 }
 

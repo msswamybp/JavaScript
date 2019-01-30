@@ -6,7 +6,7 @@ class Stock {
             this.shareprice = shareprice
     }
     shareprice() {
-        //console.log("hjjjjjjjjjjjjjg")
+        console.log("hghnjg")
         return this.numberofshare * this.shareprice;
     }
 

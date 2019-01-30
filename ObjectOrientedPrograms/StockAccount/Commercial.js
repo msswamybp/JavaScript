@@ -1,13 +1,29 @@
-var D=require('../../ObjectOrientedPrograms/StockAccount/StockAccount')
-var read=require('readline-sync')
-var file=require('fs')
-var data=file.readFileSync('customer.json','utf8')
-var object=JSON.parse(data)
-console.log(object)
-var object1=new D.StockAccount
+var D = require('../../ObjectOrientedPrograms/StockAccount/StockAccount')
+var read = require('readline-sync')
+var file = require('fs')
+var data = file.readFileSync('customer.json', 'utf8')
+var data1 = file.readFileSync('Company.json', 'utf8')
+var object = JSON.parse(data)
+var object11 = JSON.parse(data1)
+console.log(object11)
+var object1 = new D.StockAccount
 console.log("Enter 1 to create account:")
-var num=read.question("select your number")
-if(num==1)
-{
-object1.stock(object)
+console.log("Enter 2 to total value of amount in account")
+console.log("Enter 3 to buy shares")
+console.log("Enter 4 to sell shares")
+console.log("Enter 5 to information shares of company and customer")
+var num = read.question("select your number")
+if (num == 1) {
+    object1.stockCreate(object)
 }
+if (num == 2) {
+    object1.valueof(object)
+}
+if (num == 3) {
+    object1.buy(object, object11)
+}
+if (num == 4)
+    object1.sell(object,object11)
+if(num==5)
+object1.print(object,object11)
+

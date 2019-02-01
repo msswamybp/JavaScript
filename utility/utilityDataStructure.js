@@ -322,7 +322,7 @@ class LinkedList {
     }
 }
 
-//module.exports={LinkedList}
+
 module.exports = { LinkedList, Stack ,StackLinkedList,QueueLinked,
     print2DArray2(rows, col,arr1) {
         var arr = [];

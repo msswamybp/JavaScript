@@ -1,6 +1,7 @@
 var read = require('readline-sync')
 var file = require('fs')
 var sort=require('../utility/utility')
+var D=require('../utility/utility')
 
 module.exports = {
     inventory(object) {
@@ -249,7 +250,7 @@ module.exports = {
         console.log("Enter 1 to search Doctor by name, id, Specialization or Availability");
         console.log("Enter 2 to search patient by name, mobile number or id");
         console.log("Enter 3  to take appointment with the doctor")
-        var num=read.questionInt("Enter 1 or 2 ,3:")
+        var num=read.questionInt("choose any NUmber:")
         if(num==1)
         {
             var number=read.questionInt("Enter \n 1 to search Doctor by Name \n 2.by Id \n 3.by Specialization:")
@@ -261,6 +262,7 @@ module.exports = {
                     {
                         console.log("-------Your Doctor Information is-------")
                         console.log(doctors[key])
+                        console.log("-----------------------------------------")
 
                     }
                   
@@ -275,6 +277,7 @@ module.exports = {
                     {
                         console.log("-------Your Doctor Information is-------")
                         console.log(doctors[key])
+                        console.log("-----------------------------------------")
 
                     }
                   
@@ -289,6 +292,7 @@ module.exports = {
                     {
                         console.log("-------Your Doctor Information is-------")
                         console.log(doctors[key])
+                        console.log("-----------------------------------------")
 
                     }
                   
@@ -307,6 +311,7 @@ module.exports = {
                     {
                         console.log("-------Your patient Information is-------")
                         console.log(patient[key])
+                        console.log("-----------------------------------------")
 
                     }
                   
@@ -321,6 +326,7 @@ module.exports = {
                     {
                         console.log("-------Your patient Information is-------")
                         console.log(patient[key])
+                        console.log("-----------------------------------------")
 
                     }
                   
@@ -335,6 +341,7 @@ module.exports = {
                     {
                         console.log("-------Your patient Information is-------")
                         console.log(patient[key])
+                        console.log("-----------------------------------------")
 
                     }
                   
@@ -343,7 +350,7 @@ module.exports = {
             }
 
         }
-        if(num==3)
+       /* if(num==3)
         {
             c++
             if(c>5){
@@ -375,6 +382,72 @@ module.exports = {
             
             
             
+        }*/
+        if(num==3){
+            var arrdr=[]
+            var arrpa=[]
+            var arrtime=[]
+            console.log("Doctors list is:")
+            for (const key in doctors) {
+                console.log("Nameof doctor:"+doctors[key].Name)
+            }
+            var c=0
+            for (const key in patient) {
+                var drname=""
+                var namedr=read.question(patient[key].Name+" Enter Doctor Name you want take appointment:")
+                  for(let key=0;key<2;key++)
+                  {
+                    if(doctors[key].Name==namedr)
+                    {
+                        arrdr.push(doctors[key].Name)
+                        arrtime.push(doctors[key].Availability)
+                       var n= doctors[key].Numberofappointmaent
+                       data.Doctors.push(
+                           {
+                               Name:doctors[key].Name,
+                               Numberofappointmaent:n
+                           }
+                       )
+                       var d = file.writeFileSync('clinic1.json', JSON.stringify(data))
+                       
+                    }
+                
+                }
+               
+                arrpa.push(patient[key].Name)
+                c++
+            }
+            console.log()
+            console.log("slno"+" Doctor Name   Patient Name   Availability Time")
+            for(let i=0;i<c;i++)
+            {
+             console.log(i+1+"    "+arrdr[i]+"       "+arrpa[i]+"          "+arrtime[i])   
+            }
+           
+            var arrc=[]
+            for(let i=0;i<doctors.length;i++){
+                var c=0
+                arrc.push([])
+                for(let j=0;j<arrdr.length;j++)
+                {
+                    if(doctors[i].Name==arrdr[j])
+                    {
+                        c++;
+                    }
+                }
+                var s=""+c+doctors[i].Name
+                if(!arrc.includes(s))
+                {
+                arrc.push(s)
+                }
+
+            }
+          var sortarr=D.bubbleSort(arrc)
+          var st=sortarr[sortarr.length-1]
+          var st1=st.substring(1, st.length);
+          console.log(" popular Doctor is:"+st1)
+            
+
         }
     }
    

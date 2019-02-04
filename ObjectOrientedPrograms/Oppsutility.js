@@ -2,7 +2,18 @@ var read = require('readline-sync')
 var file = require('fs')
 var sort=require('../utility/utility')
 var D=require('../utility/utility')
+class Person{
+    constructor(fname,lname,city,st,zip,phnum){
+        this.firstname=fname,
+        this.lastname=lname,
+        this.city=city,
+        this.state=st,
+        this.zipcode=zip,
+        this.phonenumber=phnum
 
+
+    }
+}
 module.exports = {
     inventory(object) {
         var rice = object.Rice;

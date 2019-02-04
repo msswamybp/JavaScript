@@ -1,1 +1,19 @@
-{"customer":[{"name":"swamy","id":"66","share":90},{"name":"arun","id":44,"share":76},{"name":"anil","id":55,"share":40}]}
+{
+    "customer": [
+        {
+            "name": "swamy",
+            "id": "66",
+            "share": 85
+        },
+        {
+            "name": "arun",
+            "id": 44,
+            "share": 30
+        },
+        {
+            "name": "anil",
+            "id": 55,
+            "share": 15
+        }
+    ]
+}

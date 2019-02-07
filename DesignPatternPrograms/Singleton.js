@@ -87,16 +87,16 @@ var mySingleton = (function () {
    
    
   // Usage:
-   
+  
   var singleA = mySingleton.getInstance();
   var singleB = mySingleton.getInstance();
-  console.log(singleA.getRandomNumber()+" ==========")
-  console.log(singleB.getRandomNumber()+" ;;;;;;;;;;;;;;")
+  console.log(singleA.getRandomNumber())
+  console.log(singleB.getRandomNumber())
   console.log( singleA.getRandomNumber() === singleB.getRandomNumber() ); // true
    
   var badSingleA = myBadSingleton.getInstance();
   var badSingleB = myBadSingleton.getInstance();
-  console.log(badSingleA.getRandomNumber()+" sssssssssss")
-  console.log(badSingleB.getRandomNumber()+" nnnnnnnnnnn")
+  console.log(badSingleA.getRandomNumber())
+  console.log(badSingleB.getRandomNumber())
   console.log( badSingleA.getRandomNumber() !== badSingleB.getRandomNumber() ); // true
    

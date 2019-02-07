@@ -36,15 +36,16 @@ for(let i=0;i<cardarr.length;i++)
 var data=Player1.print()
 var arr=data.split(" ")
 var arr10=S.bubbleSort(arr)
+console.log("llllllllllllllllllll")
 
 var data1=Player2.print()
 var arr1=data1.split(" ")
 var arr11=S.bubbleSort(arr1)
-
+console.log("llllllllllllllllllll")
 var data2=Player3.print()
 var arr2=data2.split(" ")
 var arr12=S.bubbleSort(arr2)
-
+console.log("llllllllllllllllllll")
 var data3=Player4.print()
 var arr3=data3.split(" ")
 var arr13=S.bubbleSort(arr3)

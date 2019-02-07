@@ -6,7 +6,6 @@ class Stock {
             this.shareprice = shareprice
     }
     shareprice() {
-        console.log("hghnjg")
         return this.numberofshare * this.shareprice;
     }
 
@@ -14,13 +13,13 @@ class Stock {
 module.exports = {
     Stock,
     stockReport(object) {
-        console.log(object)
         var stock = object.Stock
         var totalstock = 0
         for (var key in stock) {
             console.log()
             console.log("The total value of ", stock[key].stockname, " share is ", stock[key].numberofshare * stock[key].shareprice);
             var num = stock[key].numberofshare * stock[key].shareprice
+            console.log(num)
             totalstock = totalstock + num
         }
         console.log()

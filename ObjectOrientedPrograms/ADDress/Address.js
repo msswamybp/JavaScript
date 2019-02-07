@@ -27,9 +27,9 @@
         console.log("Enter 6 for Print all addressbook information")
         var num = read.questionInt("Select  any number:")
         switch (num) {
-            case 1: this.addperson(data)
+            case 1: this.addPerson(data)
                 break;
-            case 2: this.updateperson(data)
+            case 2: this.updatePerson(data)
                 break;
             case 3: this.removeperson(data)
                 break;
@@ -43,7 +43,7 @@
         }
 
     }
-    addperson(data) {
+    addPerson(data) {
         var fname = read.question("Enter firstname of person :")
         var lname = read.question("Enter lastname of person :")
         var city1 = read.question("Enter city of person:")
@@ -63,7 +63,7 @@
 
         var d = file.writeFileSync('s.json', JSON.stringify(data))
     }
-    updateperson(data) {
+    updatePerson(data) {
         var name = read.question("enter Firstname of person :")
         for (let i = 0; i < data.Person.length; i++) {
             if (data.Person[i].personfname == name) {

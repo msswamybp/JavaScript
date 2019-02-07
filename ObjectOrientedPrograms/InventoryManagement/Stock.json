@@ -16,14 +16,14 @@
             "numberofshare": 5
         },
         {
-            "stockname": "MSS",
-            "shareprice": 55,
-            "numberofshare": 44
-        },
-        {
             "stockname": "sss",
             "shareprice": 55,
             "numberofshare": 66
+        },
+        {
+            "stockname": "MSS",
+            "shareprice": 100,
+            "numberofshare": 10
         }
     ]
 }

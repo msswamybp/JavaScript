@@ -12,7 +12,7 @@ for (let i in a) {
     c++
 }
 console.log(l.printele())
-var name1 = read.question("Enter the name of company:")
+var name1 = read.question("Enter the name of company you want remove :")
 var temp = l.head;
 console.log(l.size)
 for (let i = 0; i < c; i++) {

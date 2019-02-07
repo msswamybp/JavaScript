@@ -27,5 +27,9 @@ for(let i=0;i<4;i++)
     a=a+9
 }
 
-console.log(arr)
+for(let i=0;i<arr.length;i++)
+{
+    console.log(arr[i])
+}
+
 

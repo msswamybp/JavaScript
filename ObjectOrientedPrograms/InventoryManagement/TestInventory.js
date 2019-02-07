@@ -1,4 +1,4 @@
-var D = require('../../ObjectOrientedPrograms/InventoryManagement/aaaa')
+var D = require('./InventoryObject')
 var read=require('readline-sync')
 var readfile = require('fs')
 var data = readfile.readFileSync('Stock.json', 'utf8')

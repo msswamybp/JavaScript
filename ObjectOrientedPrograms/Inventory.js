@@ -1,5 +1,5 @@
 var filestream = require('fs');
-var pass = require('../ObjectOrientedPrograms/a');
+var pass = require('../ObjectOrientedPrograms/stockrice');
 var data = filestream.readFileSync('Inventory.json');
 var object = JSON.parse(data);
 function Inventory() {

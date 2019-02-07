@@ -13,21 +13,8 @@
             "Specialization": "all",
             "Availability": "PM",
             "Numberofappointmaent": 0
-        },
-        {
-            "Name": "DR siddesh",
-            "Id": "50",
-            "Specialization": "",
-            "Availability": "AM",
-            "Numberofappointmaent": 0
-        },
-        {
-            "Name": "DR Praveen",
-            "Id": "55",
-            "Specialization": "all",
-            "Availability": "PM",
-            "Numberofappointmaent": 0
         }
+       
 
     ],
     "Patient": [

@@ -1,4 +1,4 @@
-var D =require('../../ObjectOrientedPrograms/a')
+var D =require('../StockReport1')
 var fileread=require('fs')
 var data=fileread.readFileSync('Stock.json','utf8')
 var object=JSON.parse(data)

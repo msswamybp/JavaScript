@@ -22,17 +22,7 @@ class StockAccount{
 
 
     }
-    valueof(data){
-       
-        var s=data.customer
-        var sum=0
-        for(let i in s){
-            sum=sum+s[i].amount
-
-        }
-        console.log(sum)
-
-    }
+   
 
     buy(data,data1)
     { 
@@ -58,7 +48,7 @@ class StockAccount{
                         console.log(object1[i])
                         var name10=object1[i].name
                         var number=read.questionInt("enter how many shares you want buy:")
-                        var s="customername "+customername+" nameof company:"+name10+" buy numberof share"+number
+                        var s="customer name :"+customername+", & name of company:"+name10+", buy number of share"+number
                         this.stackps(s)
                         var time=new Date()
                         var time1=" Time of buy the share is:"+time
@@ -78,10 +68,7 @@ class StockAccount{
                 }
 
             }
-            else
-            {
-             console.log("This ID is not valid: ")
-            }
+            
         }
 
     }
@@ -110,7 +97,7 @@ class StockAccount{
                         var name11=object1[i].name
                          
                         var number=read.question("enter how many shares you want sell:")
-                        var s="customername "+customername1+" nameof company:"+name11+" sell numberof share"+number
+                        var s="customer name :"+customername1+", & nameof company:"+name11+" ,sell number of share :"+number
                         this.stackps(s)
                         var time=new Date()
                         var time1=" Time of sell the share is:"+time
@@ -131,10 +118,8 @@ class StockAccount{
                 }
 
             }
-            else
-            {
-             console.log("This ID is not valid: ")
-            }
+           
+            
         }
 
 
@@ -143,13 +128,13 @@ class StockAccount{
        
        var stack=new M.StackLinkedList
        stack.push(s);
-       stack.print();
+        stack.print();
 
    }
    queuetime(time){
        var queue=new M.QueueLinked
        queue.enqueue(time)
-      
+      queue.print()
 
    }
     print(data,data1){
